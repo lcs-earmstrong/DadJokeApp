@@ -15,14 +15,22 @@ struct ContentView: View {
     
     //Mark: computed properties
     var body: some View {
-        Text(someText)
-            .padding()
-            .onAppear() {
-                //invoke the function to get a joke
-                //This is the "call site"
-fetchJoke()
+        
+        VStack{
+            Text(someText)
+                .padding()
+                .onAppear() {
+                    //invoke the function to get a joke
+                    //This is the "call site"
+    fetchJoke()
+                }
+            Button("Get another joke"){
+                fetchJoke()
             }
-    }
+            
+        }
+        
+        }
     
     //Mark: Functions
     func fetchJoke() {
